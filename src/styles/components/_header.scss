@@ -1,15 +1,68 @@
-@use '../utils/mixins' as *;
+@use '../utils' as *;
 
 .header {
-  // declare mixins before styles
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
 
-  @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+  }
 
-  h1 {
-    font-size: 2rem;
+  // невидимий чекбокс, що відкриває меню на мобільних
+  &__toggle {
+    position: absolute;
+    top: 12px;
+    right: var(--pad);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
+
+    &:focus-visible + .logo + .burger {
+      @include focus-ring;
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+}
+
+// стан «меню відкрите»
+.header__toggle:checked {
+  & + .logo + .burger .burger__line {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      box-shadow: none;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text-dark);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.header__toggle:checked ~ .nav {
+  display: block;
+
+  @include mq(md) {
+    display: flex;
   }
 }

@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  font: 700 var(--fs-logo) / 1 var(--font-script);
+  color: var(--color-text-dark);
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    width: var(--logo-k);
+    height: var(--logo-k);
+    margin-right: -4px;
+    border-radius: 50%;
+    background: var(--color-text-dark);
+    color: var(--color-white);
+  }
+}
