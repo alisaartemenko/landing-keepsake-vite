@@ -1,16 +1,6 @@
-*, html, body {
-  font-family: "Montserrat", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+body {
+  font: 400 14px/22px var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  padding-top: var(--header-h);
 }
