@@ -1,7 +1,7 @@
 extends ../layouts/main.pug
 
-append meta
-  meta(name="description" content="Keepsake is a digital and branding agency in London.")
+block append meta
+  meta(name="description", content="Keepsake is a digital and branding agency in London.")
 
 block title
   | Keepsake &ndash; Digital & Branding Agency
@@ -18,4 +18,3 @@ block content
     include ../components/sections/journal
   include ../components/footer
   include ../components/totop
-

@@ -98,7 +98,9 @@ $work-filters: all, branding, identity, print, web, motion;
 
 // фільтр карток (для «all» нічого не ховаємо)
 @each $filter in branding, identity, print, web, motion {
-  .works__radio[value='#{$filter}']:checked ~ .works__grid .works__item:not([data-category='#{$filter}']) {
+  .works__radio[value='#{$filter}']:checked
+    ~ .works__grid
+    .works__item:not([data-category='#{$filter}']) {
     display: none;
   }
 }

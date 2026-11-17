@@ -10,7 +10,7 @@
   border-radius: 50%;
   background: var(--color-accent);
   color: var(--color-white);
-  box-shadow: 0 6px 14px rgba(249, 88, 88, 0.4);
+  box-shadow: 0 6px 14px rgb(249 88 88 / 40%);
 
   &:hover {
     background: var(--color-accent-hover);

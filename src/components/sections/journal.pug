@@ -7,9 +7,9 @@ section#journal.section.section--last(aria-labelledby="journal-title")
     .posts
       each post in posts
         article.post
-          div.post__thumb(role="img" aria-label="Journal preview" style=`--thumb-bg: ${post.bg}`)
+          .post__thumb(role="img", aria-label="Journal preview", style=`--thumb-bg: ${post.bg}`)
           div
-            p.post__meta #{post.date} / #{post.category}
+            p.post__meta #{ post.date } / #{ post.category }
             h3.post__title= post.title
             p.post__text Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
             a.post__more(href="#journal") Read more ›

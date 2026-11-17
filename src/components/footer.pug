@@ -15,18 +15,25 @@ footer#contact.footer
         h2.footer__title Newsletter
         p.newsletter__text Fresh case studies and design notes, once a month.
         p#done.newsletter__ok(role="status") You’re in! Check your inbox to confirm.
-        form.newsletter__form(action="#done" method="get")
+        form.newsletter__form(action="#done", method="get")
           .newsletter__row
             label.newsletter__label(for="email") Email address
-            input#email.newsletter__input(type="email" name="email" placeholder="Your email address" required aria-describedby="email-err")
+            input#email.newsletter__input(
+              type="email",
+              name="email",
+              placeholder="Your email address",
+              required,
+              aria-describedby="email-err"
+            )
             button.btn(type="submit") Subscribe
             p#email-err.newsletter__error Please enter a valid email address.
           label.newsletter__agree
-            input(type="checkbox" required)
-            |  I agree to the privacy policy
+            input(type="checkbox", required)
+            |
+            | I agree to the privacy policy
     .footer__bottom
       p © 2026 Keepsake. All rights reserved.
       ul.social
         each s in socials
           li
-            a.social__link(href="#top" aria-label=s.label class=`social__link--${s.mod}`)= s.short
+            a.social__link(href="#top", aria-label=s.label, class=`social__link--${s.mod}`)= s.short
