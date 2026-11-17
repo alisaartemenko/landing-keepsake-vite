@@ -1,0 +1,61 @@
+.quote {
+  padding: 32px var(--pad);
+  background: var(--color-bg-light);
+
+  &__mark {
+    font: 700 48px / 1 var(--font-body);
+    color: var(--color-accent);
+  }
+
+  &__text {
+    margin: 8px 0 24px;
+    font: 300 var(--fs-quote) / 1.6 var(--font-body);
+    color: var(--color-text-dark);
+  }
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  &__avatar {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    color: var(--color-white);
+    font: 400 12px var(--font-head);
+  }
+
+  &__name {
+    font: 400 12px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+  }
+
+  &__role {
+    color: var(--color-muted);
+  }
+
+  &__dots {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 2px;
+    background: var(--color-border);
+
+    &--on {
+      width: 20px;
+      background: var(--color-accent);
+    }
+  }
+}

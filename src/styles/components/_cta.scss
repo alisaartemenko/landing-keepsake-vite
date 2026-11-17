@@ -1,0 +1,18 @@
+.cta {
+  margin-top: var(--sec);
+  text-align: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__title {
+    font: 300 var(--fs-cta) / 1.3 var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-text-dark);
+  }
+}

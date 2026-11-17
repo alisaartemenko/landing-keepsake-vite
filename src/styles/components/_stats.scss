@@ -1,0 +1,32 @@
+@use '../utils' as *;
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin-top: var(--sec);
+  padding-block: 24px;
+  border-block: 1px solid var(--color-border);
+
+  &__item {
+    flex: 1 1 50%;
+    text-align: center;
+
+    @include mq(md) {
+      flex-basis: 25%;
+    }
+  }
+
+  &__value {
+    display: block;
+    font: 300 var(--fs-stat) / 1.2 var(--font-head);
+    color: var(--color-text-dark);
+  }
+
+  &__label {
+    font: 400 11px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-muted);
+  }
+}

@@ -1,0 +1,21 @@
+include ../../data/about
+
+section.section(aria-labelledby="clients-title")
+  .container
+    h2#clients-title.section-title Clients & kind words
+    p.section__lead Some of the teams that trusted us with their brands.
+    ul.clients
+      each client in clients
+        li.clients__item(class=client.mod && 'clients__item--' + client.mod)= client.name
+    figure.quote
+      span.quote__mark(aria-hidden="true") “
+      blockquote.quote__text= review.text
+      figcaption.quote__caption
+        span.quote__avatar= review.initials
+        span
+          b.quote__name= review.author
+          br
+          small.quote__role= review.role
+        span.quote__dots(aria-hidden="true")
+          each n in [0, 1, 2]
+            i.quote__dot(class={ 'quote__dot--on': n === 0 })

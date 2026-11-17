@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 20px;
+
+  &__item {
+    flex: 1 1 calc(50% - 20px);
+    text-align: center;
+
+    @include mq(lg) {
+      flex-basis: 25%;
+    }
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: var(--ico);
+    height: var(--ico);
+    margin-inline: auto;
+    border-radius: 50%;
+    background: var(--color-bg-light);
+  }
+
+  &__heart {
+    color: var(--color-accent);
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+    font: 400 13px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

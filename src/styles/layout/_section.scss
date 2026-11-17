@@ -1,3 +1,7 @@
 .section {
   padding-top: var(--sec);
+
+  &__lead {
+    margin: 8px 0 28px;
+  }
 }

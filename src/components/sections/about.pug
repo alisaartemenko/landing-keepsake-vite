@@ -1,0 +1,19 @@
+include ../../data/about
+include ../../mixins/service-icon
+
+section#about.section(aria-labelledby="about-title")
+  .container
+    h2#about-title.section-title What do we do
+    p.section__lead We are a small team of designers and makers who help brands look their best online and offline.
+    ul.services
+      each service, i in services
+        li.services__item
+          span.services__icon
+            +service-icon(service.icon)
+          h3.services__title= service.title
+          p.services__text= service.text
+    ul.stats
+      each stat in stats
+        li.stats__item
+          b.stats__value= stat.value
+          span.stats__label= stat.label
