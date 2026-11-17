@@ -1,4 +1,22 @@
-header.header
-    .header-inner
-        include logo
-        include navigation
+include ../data/nav
+
+header.hdr
+  .wrap.hdr-bar
+    input#nav-toggle.nav-toggle(type="checkbox" aria-label="Toggle menu")
+    a.logo(href="#top" aria-label="Keepsake home")
+      b K
+      | eepsake
+    label.burger(for="nav-toggle" aria-hidden="true")
+      i
+    nav.menu(aria-label="Main")
+      ul.menu-list
+        each item in navItems
+          li
+            a(href=item.href class={'is-active': item.active})= item.title
+      .menu-extra
+        a.btn(href="#contact") Contact us
+        a.btn.btn--ghost(href="#top") Favourites
+        .say
+          p.cap Say hello
+          p hello@keepsake.studio
+          p +44 20 7946 0000
