@@ -1,0 +1,6 @@
+//- label: текст, href: посилання, variant: 'primary' або 'ghost'
+mixin btn(label, href = '#', variant = 'primary')
+  a.btn(href=href class={'btn--ghost': variant === 'ghost'})&attributes(attributes)
+    = label
+    if block
+      block

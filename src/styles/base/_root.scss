@@ -16,6 +16,8 @@
   --fs-nav: 12px;
   --fs-logo: 22px;
   --logo-k: 34px;
+  --gap-works: 12px;
+  --card-ratio: 1 / 0.72;
 
   @include mq(md) {
     --pad: 40px;
@@ -24,11 +26,13 @@
     --fs-nav: 13px;
     --fs-logo: 26px;
     --logo-k: 40px;
+    --card-ratio: 1 / 0.79;
   }
 
   @include mq(lg) {
     --pad: 90px;
     --sec: 90px;
     --fs-h1: 40px;
+    --gap-works: 14px;
   }
 }

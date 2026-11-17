@@ -1,0 +1,104 @@
+@use '../utils' as *;
+
+// має збігатися з категоріями в src/data/works.pug
+$work-filters: all, branding, identity, print, web, motion;
+
+.works {
+  &__radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    @include mq(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__chips {
+    display: flex;
+    gap: 8px;
+    margin-right: calc(-1 * var(--pad));
+    padding-bottom: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    @include mq(md) {
+      margin-right: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-works);
+
+    @include mq(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    &--md {
+      display: none;
+
+      @include mq(md) {
+        display: block;
+      }
+    }
+
+    &--lg {
+      display: none;
+
+      @include mq(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+
+    .btn {
+      flex: 1;
+
+      @include mq(md) {
+        flex: none;
+      }
+    }
+  }
+}
+
+// активний чипс і фокус
+@each $filter in $work-filters {
+  .works__radio[value='#{$filter}']:checked ~ .works__head .chip[data-filter='#{$filter}'] {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  .works__radio[value='#{$filter}']:focus-visible ~ .works__head .chip[data-filter='#{$filter}'] {
+    @include focus-ring;
+  }
+}
+
+// фільтр карток (для «all» нічого не ховаємо)
+@each $filter in branding, identity, print, web, motion {
+  .works__radio[value='#{$filter}']:checked ~ .works__grid .works__item:not([data-category='#{$filter}']) {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+//- name: назва символу зі спрайта, size: необов'язковий розмір
+mixin icon(name, size)
+  case name
+    when 'plus'
+      - size = size || 20
+    when 'up'
+      - size = size || 22
+    default
+      - size = size || 16
+  svg(width=size height=size aria-hidden="true")&attributes(attributes)
+    use(href=`#i-${name}`)

@@ -1,0 +1,21 @@
+include ../../data/works
+include ../../mixins/btn
+include ../../mixins/work-card
+
+section#works.section.works(aria-labelledby="works-title")
+  .container
+    each f, i in filters
+      input.works__radio(type="radio" name="works-filter" id="filter-" + f.value value=f.value checked=(i === 0))
+    .works__head
+      h2#works-title.section-title Our awesome works
+      .works__chips(role="group" aria-label="Filter works")
+        each f in filters
+          label.chip(for="filter-" + f.value data-filter=f.value)= f.label
+    ul.works__grid
+      each work, i in works
+        - var onlyMd = i >= 5 && i < 8
+        - var onlyLg = i >= 8
+        li.works__item(data-category=work.category class={'works__item--md': onlyMd, 'works__item--lg': onlyLg})
+             +work-card(work)
+    .works__more
+      +btn('Load more works', '#works', 'ghost')

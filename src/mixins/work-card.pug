@@ -1,0 +1,11 @@
+include icon
+
+mixin work-card(work)
+  article.work-card(tabindex="0" style=`--card-bg: ${work.bg}`)&attributes(attributes)
+    img.work-card__img(src=`/src/assets/${work.image}.webp` alt=work.alt width="358" height="282" loading="lazy" decoding="async")
+    .work-card__overlay
+      span.work-card__plus
+        +icon('plus')
+      h3.work-card__title= work.title
+      span.work-card__line
+      span.work-card__cat= work.category

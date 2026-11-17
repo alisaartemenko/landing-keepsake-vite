@@ -1,0 +1,15 @@
+.chip {
+  flex: none;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  font: 400 var(--fs-nav) / 1.4 var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}

@@ -1,0 +1,63 @@
+.work-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: var(--card-ratio);
+  overflow: hidden;
+  background: var(--card-bg, var(--color-bg-light));
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--color-overlay);
+    color: var(--color-white);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:hover &__overlay,
+  &:focus-within &__overlay,
+  &:focus-visible &__overlay {
+    opacity: 1;
+  }
+
+  &__plus {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-teal);
+  }
+
+  &__title {
+    font: 400 16px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__line {
+    width: 32px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  &__cat {
+    font-size: 13px;
+    color: var(--color-teal);
+    text-transform: capitalize;
+  }
+}
