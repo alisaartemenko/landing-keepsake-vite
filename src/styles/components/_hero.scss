@@ -1,0 +1,27 @@
+@use '../utils' as *;
+
+.hero {
+  padding-block: var(--sec);
+  background: var(--color-bg-light);
+
+  &__title {
+    font: 300 var(--fs-h1) / 1.25 var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-text-dark);
+  }
+
+  &__text {
+    margin: 16px 0 28px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include mq(md) {
+      flex-direction: row;
+    }
+  }
+}

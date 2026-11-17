@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use '../utils' as *;
 
 :root {
   @each $name, $value in $colors {
@@ -9,4 +9,26 @@
   --font-body: #{$font-body};
   --font-script: #{$font-script};
   --header-h: 64px;
+  --max: 1100px;
+  --pad: 20px;
+  --sec: 56px;
+  --fs-h1: 26px;
+  --fs-nav: 12px;
+  --fs-logo: 22px;
+  --logo-k: 34px;
+
+  @include mq(md) {
+    --pad: 40px;
+    --sec: 72px;
+    --fs-h1: 32px;
+    --fs-nav: 13px;
+    --fs-logo: 26px;
+    --logo-k: 40px;
+  }
+
+  @include mq(lg) {
+    --pad: 90px;
+    --sec: 90px;
+    --fs-h1: 40px;
+  }
 }
