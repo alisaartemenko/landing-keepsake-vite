@@ -60,4 +60,8 @@
     color: var(--color-teal);
     text-transform: capitalize;
   }
+
+  picture {
+    display: contents;
+  }
 }
