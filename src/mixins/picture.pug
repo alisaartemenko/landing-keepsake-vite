@@ -1,0 +1,21 @@
+//- name: ім'я файлу без розширення, alt: опис
+//- options: { sizes, priority }, priority: true прибирає lazy і ставить fetchpriority
+mixin picture(name, alt, options = {})
+  - var widths = [400, 800];
+  - var dir = "/src/assets/images/";
+  - var sizes = options.sizes || "100vw";
+  - var big = widths[widths.length - 1];
+  - var height = Math.round((big * 282) / 358);
+  picture
+    each fmt in ["avif", "webp"]
+      - var srcset = widths.map(function (w) { return dir + name + '-' + w + '.' + fmt + ' ' + w + 'w' }).join(', ')
+      source(type="image/" + fmt, srcset=srcset, sizes=sizes)
+    img(
+      src=dir + name + "-" + big + ".jpg",
+      alt=alt,
+      width=big,
+      height=height,
+      loading=options.priority ? false : "lazy",
+      fetchpriority=options.priority ? "high" : false,
+      decoding="async"
+    )&attributes(attributes)

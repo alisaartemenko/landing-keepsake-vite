@@ -1,15 +1,11 @@
 include icon
+include picture
 
 mixin work-card(work)
   article.work-card(tabindex="0", style=`--card-bg: ${work.bg}`)&attributes(attributes)
-    img.work-card__img(
-      src=`/src/assets/${work.image}.webp`,
-      alt=work.alt,
-      width="358",
-      height="282",
-      loading="lazy",
-      decoding="async"
-    )
+    +picture(work.image, work.alt, {
+      sizes: "(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw",
+    }).work-card__img
     .work-card__overlay
       span.work-card__plus
         +icon("plus")
