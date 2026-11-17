@@ -1,0 +1,18 @@
+.totop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: 0 6px 14px rgba(249, 88, 88, 0.4);
+
+  &:hover {
+    background: var(--color-accent-hover);
+  }
+}

@@ -1,7 +1,66 @@
+@use '../utils' as *;
+
 .footer {
-  background: var(--color-secondary);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding-block: var(--sec) 28px;
+  background: var(--color-footer);
+  color: var(--color-muted);
+
+  &__top {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #3d3d41;
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 40px;
+
+    > * {
+      flex: 1;
+    }
+
+    @include mq(md) {
+      gap: 64px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font: 400 13px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-white);
+  }
+
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    &:hover,
+    &:focus-visible {
+      color: var(--color-white);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-top: 24px;
+    font-size: 12px;
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 }

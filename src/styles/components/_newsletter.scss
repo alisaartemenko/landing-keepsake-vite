@@ -1,0 +1,88 @@
+@use '../utils' as *;
+
+.newsletter {
+  @include mq(md) {
+    width: min(100%, 400px);
+  }
+
+  &__text {
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include mq(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    background: #3a3a3e;
+    color: var(--color-white);
+    outline: 0;
+
+    &:focus {
+      border-color: var(--color-teal);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-accent);
+    }
+  }
+
+  &__error {
+    display: none;
+    order: 3;
+    font-size: 12px;
+    color: var(--color-accent);
+
+    @include mq(md) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__input:user-invalid ~ &__error {
+    display: block;
+  }
+
+  &__agree {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  &__ok {
+    display: none;
+    padding: 16px;
+    border: 1px solid var(--color-teal);
+    background: #2f3d3f;
+    color: var(--color-white);
+
+    &:target {
+      display: block;
+    }
+  }
+
+  &:has(&__ok:target) &__form,
+  &:has(&__ok:target) &__text {
+    display: none;
+  }
+}

@@ -1,6 +1,10 @@
 .section {
   padding-top: var(--sec);
 
+  &--last {
+    padding-bottom: var(--sec);
+  }
+
   &__lead {
     margin: 8px 0 28px;
   }

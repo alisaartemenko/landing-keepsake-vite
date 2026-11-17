@@ -1,0 +1,28 @@
+$social-colors: (
+  'rss': #f9a03f,
+  'facebook': #4a67ad,
+  'twitter': #1fb6e8,
+  'dribbble': #ee74b0,
+  'pinterest': #e4444b,
+);
+
+.social {
+  display: flex;
+  gap: 10px;
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font: 700 11px var(--font-body);
+    color: var(--color-white);
+
+    @each $name, $color in $social-colors {
+      &--#{$name} {
+        background: $color;
+      }
+    }
+  }
+}

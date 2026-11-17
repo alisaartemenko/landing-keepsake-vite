@@ -1,0 +1,58 @@
+@use '../utils' as *;
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+}
+
+.post {
+  display: flex;
+  flex: 1 1 100%;
+  gap: 16px;
+
+  @include mq(lg) {
+    flex-basis: calc(50% - 20px);
+  }
+
+  &__thumb {
+    flex: none;
+    width: 96px;
+    height: 96px;
+    background: var(--thumb-bg);
+
+    @include mq(md) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__meta {
+    font: 400 10px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+  }
+
+  &__title {
+    margin: 4px 0 8px;
+    font: 400 14px / 1.3 var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 19px;
+  }
+
+  &__more {
+    display: inline-block;
+    margin-top: 6px;
+    font: 400 11px var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+  }
+}
