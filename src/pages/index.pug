@@ -1,19 +1,11 @@
-extends ../layouts/main
-
-block fonts
-    include ../includes/fonts
+extends ../layouts/main.pug
 
 append meta
-    include ../includes/meta
+  meta(name="description" content="Keepsake is a digital and branding agency in London.")
 
-block data
-    include ../data/data
-
-block header
-    include ../components/header
+block title
+  | Keepsake – Digital & Branding Agency
 
 block content
-    include ../components/content
-
-block footer
-    include ../components/footer
+  main
+    h1 We’re Keepsake
