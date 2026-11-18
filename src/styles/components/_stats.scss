@@ -24,7 +24,7 @@
   }
 
   &__label {
-    font: 400 11px var(--font-head);
+    font: 400 rem(11) var(--font-head);
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--color-muted);
